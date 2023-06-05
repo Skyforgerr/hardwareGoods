@@ -1,0 +1,18 @@
+version: '1'
+services:
+  java-server:
+    image: shimadsy/hardware
+    restart: always
+    ports:
+      - "8080:8080"
+
+  db:
+    build: ./docker/db
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_DB: "hardware" # Указываете имя базы данных здесь
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "qwertyps4"
+    ports:
+      - "5432:5432"
