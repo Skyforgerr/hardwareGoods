@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.mechanical.goods.model.Drive;
 
 public interface DriveRepository extends JpaRepository<Drive, Long> {
+  public Drive findDriveById(Long id);
 
 }
